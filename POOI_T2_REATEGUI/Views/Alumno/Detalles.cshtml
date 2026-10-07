@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Detalles";
+}
+
+@model POOI_T2_REATEGUI.Models.Alumno
+
+<h2>Detalles del alumno</h2>
+
+<p>DNI: @Model.Dni</p>
+<p>Nombres: @Model.Nombres</p>
+<p>Apellidos: @Model.Apellidos</p>
+<p>Carrera: @Model.Carrera</p>
+<p>Ciclo: @Model.Ciclo</p>
+
+@Html.ActionLink("Volver", "principal", new{ @class = "btn btn-outline-info" })

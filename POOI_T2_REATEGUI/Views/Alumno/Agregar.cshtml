@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Agregar";
+}
+
+<h2>Agregar alumno</h2>
+
+<p style="color:red">@ViewBag.Error</p>
+
+@using (Html.BeginForm("Agregar", "Alumno", FormMethod.Post))
+{
+    <p>DNI: <input type="text" name="dni" maxlength="8" required /></p>
+    <p>Nombres: <input type="text" name="nombres" required /></p>
+    <p>Apellidos: <input type="text" name="apellidos" required /></p>
+    <p>Carrera: <input type="text" name="carrera" required /></p>
+    <p>Ciclo: <input type="number" name="ciclo" min="1" required /></p>
+    <button type="submit">Guardar</button>
+}
+@Html.ActionLink("Volver", "principal", new { @class = "btn btn-secondary btn-lg" })

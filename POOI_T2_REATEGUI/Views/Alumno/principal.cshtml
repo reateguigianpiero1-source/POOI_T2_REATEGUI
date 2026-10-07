@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "principal";
+}
+
+
+
+<h2>Lista de alumnos</h2>
+
+<p style="color:red">@TempData["Error"]</p>
+<p>@Html.ActionLink("Agregar alumno", "Agregar") </p>
+
+<table class="table">
+    <tr>
+        <th>DNI</th>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>Carrera</th>
+        <th>Ciclo</th>
+        <th></th>
+    </tr>
+    @foreach (var a in Model)
+    {
+        <tr>
+            <td>@a.Dni</td>
+            <td>@a.Nombres</td>
+            <td>@a.Apellidos</td>
+            <td>@a.Carrera</td>
+            <td>@a.Ciclo</td>
+            <td>
+                @Html.ActionLink("Detalles", "Detalles", new { dni = a.Dni },new { @class = "btn btn-outline-danger btn-sm" }) |
+                @Html.ActionLink("Actualizar", "Actualizar", new { dni = a.Dni },new { @class = "btn btn-outline-danger btn-sm" }) |
+                @Html.ActionLink("Eliminar", "Eliminar", new { dni = a.Dni }, new { @class = "btn btn-outline-danger btn-sm" })
+            </td>
+        </tr>
+    }
+</table>

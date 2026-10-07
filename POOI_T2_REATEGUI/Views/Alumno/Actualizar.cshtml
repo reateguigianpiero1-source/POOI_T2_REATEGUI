@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Actualizar";
+}
+
+@model POOI_T2_REATEGUI.Models.Alumno
+
+<h2>Actualizar alumno</h2>
+
+<p style="color:red">@ViewBag.Error</p>
+
+@using (Html.BeginForm("Actualizar", "Alumno", FormMethod.Post))
+{
+    <input type="hidden" name="dniOriginal" value="@ViewBag.DniOriginal" />
+    <p>DNI: <input type="text" name="dni" value="@Model.Dni" maxlength="8" required /></p>
+    <p>Nombres: <input type="text" name="nombres" value="@Model.Nombres" required /></p>
+    <p>Apellidos: <input type="text" name="apellidos" value="@Model.Apellidos" required /></p>
+    <p>Carrera: <input type="text" name="carrera" value="@Model.Carrera" required /></p>
+    <p>Ciclo: <input type="number" name="ciclo" value="@Model.Ciclo" min="1" required /></p>
+    <button type="submit">Guardar</button>
+}
+@Html.ActionLink("Volver", "principal", new { @class = "btn btn-outline-info" })
